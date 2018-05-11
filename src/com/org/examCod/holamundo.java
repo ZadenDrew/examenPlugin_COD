@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.org.examCod;
 
 import java.awt.event.ActionEvent;
@@ -31,14 +27,26 @@ import org.openide.util.NbBundle.Messages;
 })
 @Messages("CTL_holamundo=Hola")
 public final class holamundo implements ActionListener {
-
+/**
+ * A traves del ActionPerformed se llevará a cabo la ación del plugin
+ * @param e 
+ */
     @Override
     public void actionPerformed(ActionEvent e) {
-        String comando="javapackager -deploy -native deb -Bcategory=Education"+" -Bicon= "+JOptionPane.showInputDialog("dirección de la imagen")+"-BlicenseType=Propietary" + "-outdir .-outfile"+JOptionPane.showInputDialog("Nombre de la aplicación")+"-srcdir . -srcfiles "+ JOptionPane.showInputDialog("Nombre de la aplicación")+".jar -appclass"+JOptionPane.showInputDialog("Nombre del paquete . nombre aplicación")+"-name" +JOptionPane.showInputDialog("Nombre de la aplicación")+ "-title"+JOptionPane.showInputDialog("titulo de la aplicación");
+        String comando="javapackager -deploy -native deb -Bcategory=Education"+
+                " -Bicon="+JOptionPane.showInputDialog("dirección de la imagen")+
+                " -BlicenseType=Propietary " + 
+                " -outdir "+JOptionPane.showInputDialog("Introduce ruta para la carpeta bundle")+
+                " -outfile "+JOptionPane.showInputDialog("Nombre de la aplicación")+
+                " -srcdir "+JOptionPane.showInputDialog("Introduce ruta para la carpeta bundle")+
+                " -srcfiles "+JOptionPane.showInputDialog("nombre del jar")+
+                " -appclass "+JOptionPane.showInputDialog("Nombre del paquete . nombre aplicación")+
+                " -name " +JOptionPane.showInputDialog("Nombre de la aplicación")+ 
+                " -title "+JOptionPane.showInputDialog("titulo de la aplicación");
         try {
             Runtime rt = Runtime.getRuntime();
             //Process pr = rt.exec("cmd /c dir");
-            Process pr = rt.exec("touch Holamundo.txt");
+            Process pr = rt.exec(comando);
 
             BufferedReader input = new BufferedReader(new InputStreamReader(pr.getInputStream()));
 
