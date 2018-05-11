@@ -34,10 +34,7 @@ public final class holamundo implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String comando="javapackager -deploy -native deb -Bcategory=Education"+" -Bicon= "+JOptionPane.showInputDialog("dirección de la imagen")+"-BlicenseType=Propietary "
-                + "-outdir .-outfile"+JOptionPane.showInputDialog("Nombre de la aplicación")+"-srcdir . -srcfiles "+
-                JOptionPane.showInputDialog("Nombre de la aplicación")+".jar -appclass"+JOptionPane.showInputDialog("Nombre del paquete . nombre aplicación")+"-name"
-                +JOptionPane.showInputDialog("Nombre de la aplicación")+ "-title"+JOptionPane.showInputDialog("titulo de la aplicación");
+        String comando="javapackager -deploy -native deb -Bcategory=Education"+" -Bicon= "+JOptionPane.showInputDialog("dirección de la imagen")+"-BlicenseType=Propietary" + "-outdir .-outfile"+JOptionPane.showInputDialog("Nombre de la aplicación")+"-srcdir . -srcfiles "+ JOptionPane.showInputDialog("Nombre de la aplicación")+".jar -appclass"+JOptionPane.showInputDialog("Nombre del paquete . nombre aplicación")+"-name" +JOptionPane.showInputDialog("Nombre de la aplicación")+ "-title"+JOptionPane.showInputDialog("titulo de la aplicación");
         try {
             Runtime rt = Runtime.getRuntime();
             //Process pr = rt.exec("cmd /c dir");
